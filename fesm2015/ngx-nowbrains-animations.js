@@ -176,22 +176,12 @@ const FadeSlideInOutKonversoOpacityOut = trigger('FadeSlideInOutKonversoOpacityO
 ]);
 const FadeSlideInOutKonversoTranslateOut = trigger('FadeSlideInOutKonversoTranslateOut', [
     transition(':enter', [
-        style({ opacity: 0, transform: 'translateY({{percent_start}}%)' }),
-        animate(`{{ttx}}ms ${ANIMATION_TYPE_CUBIC_BEZIER$1}`, keyframes([
-            style({ opacity: 0.5, transform: 'translateY({{percent_start}}%)', offset: 0.2 }),
-            style({ opacity: 1, transform: 'translateY({{percent_start_1}}%)', offset: 0.5 }),
-            style({ transform: 'translateY({{percent_start_2}}%)', offset: 0.8 }),
-            style({ transform: 'translateY(0%)', offset: 1 })
-        ]))
+        style({ opacity: 0, top: '{{percent_start}}%' }),
+        animate(`{{ttx}}ms ${ANIMATION_TYPE_CUBIC_BEZIER$1}`, style({ opacity: 1, top: '0%' }))
     ]),
     transition(':leave', [
-        style({ height: '100%' }),
-        animate('100ms ease-in-out', keyframes([
-            style({ transform: 'translateY({{percent_start}}%)', offset: 0.2 }),
-            style({ opacity: 0.5, transform: 'translateY({{percent_start_1}}%)', offset: 0.6 }),
-            style({ opacity: 0.2, transform: 'translateY({{percent_start_2}}%)', offset: 0.8 }),
-            style({ opacity: 0, transform: 'translateY(0%)', offset: 1 })
-        ]))
+        style({ opacity: 1 }),
+        animate('100ms ease-in-out', style({ opacity: 0 }))
     ])
 ]);
 const FadeSlideInOutCasesFeedHome = trigger('FadeSlideInOutCasesFeedHome', [

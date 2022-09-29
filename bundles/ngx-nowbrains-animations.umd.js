@@ -207,22 +207,12 @@
     ]);
     var FadeSlideInOutKonversoTranslateOut = animations.trigger('FadeSlideInOutKonversoTranslateOut', [
         animations.transition(':enter', [
-            animations.style({ opacity: 0, transform: 'translateY({{percent_start}}%)' }),
-            animations.animate("{{ttx}}ms " + ANIMATION_TYPE_CUBIC_BEZIER$1, animations.keyframes([
-                animations.style({ opacity: 0.5, transform: 'translateY({{percent_start}}%)', offset: 0.2 }),
-                animations.style({ opacity: 1, transform: 'translateY({{percent_start_1}}%)', offset: 0.5 }),
-                animations.style({ transform: 'translateY({{percent_start_2}}%)', offset: 0.8 }),
-                animations.style({ transform: 'translateY(0%)', offset: 1 })
-            ]))
+            animations.style({ opacity: 0, top: '{{percent_start}}%' }),
+            animations.animate("{{ttx}}ms " + ANIMATION_TYPE_CUBIC_BEZIER$1, animations.style({ opacity: 1, top: '0%' }))
         ]),
         animations.transition(':leave', [
-            animations.style({ height: '100%' }),
-            animations.animate('100ms ease-in-out', animations.keyframes([
-                animations.style({ transform: 'translateY({{percent_start}}%)', offset: 0.2 }),
-                animations.style({ opacity: 0.5, transform: 'translateY({{percent_start_1}}%)', offset: 0.6 }),
-                animations.style({ opacity: 0.2, transform: 'translateY({{percent_start_2}}%)', offset: 0.8 }),
-                animations.style({ opacity: 0, transform: 'translateY(0%)', offset: 1 })
-            ]))
+            animations.style({ opacity: 1 }),
+            animations.animate('100ms ease-in-out', animations.style({ opacity: 0 }))
         ])
     ]);
     var FadeSlideInOutCasesFeedHome = animations.trigger('FadeSlideInOutCasesFeedHome', [

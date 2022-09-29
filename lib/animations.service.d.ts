@@ -1,4 +1,3 @@
-import * as ɵngcc0 from '@angular/core';
 export declare class AnimationsService {
     private status;
     constructor();
@@ -39,7 +38,4 @@ export declare class AnimationsService {
             stagger: number;
         };
     };
-    static ɵfac: ɵngcc0.ɵɵFactoryDeclaration<AnimationsService, never>;
 }
-
-//# sourceMappingURL=animations.service.d.ts.map
