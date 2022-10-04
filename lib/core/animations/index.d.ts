@@ -10,3 +10,4 @@ export * from "./FadeSlideInOut.animation";
 export * from "./SlideInOut.animation";
 export * from "./SlideLeftInRightOut.anmation";
 export * from "./FlipX.animation";
+export * from "./Konverso.animation";

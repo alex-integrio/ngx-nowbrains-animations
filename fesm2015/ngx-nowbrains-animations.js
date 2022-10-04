@@ -138,11 +138,11 @@ const FadeInOut = trigger('fadeInOut', [
  **  @Date 09/08/2022
  **  @Description
  ***********************************************************/
-const ANIMATION_TYPE_CUBIC_BEZIER$1 = 'cubic-bezier(0.39, 0.58, 0.57, 1)';
+const ANIMATION_TYPE_CUBIC_BEZIER$2 = 'cubic-bezier(0.39, 0.58, 0.57, 1)';
 const FadeSlideInOut = trigger('fadeSlideInOut', [
     transition(':enter', [
         style({ opacity: 0, transform: 'translateY({{percent_start}}%)' }),
-        animate(`{{ttx}}ms ${ANIMATION_TYPE_CUBIC_BEZIER$1}`, keyframes([
+        animate(`{{ttx}}ms ${ANIMATION_TYPE_CUBIC_BEZIER$2}`, keyframes([
             style({ opacity: 0.5, transform: 'translateY({{percent_start}}%)', offset: 0.2 }),
             style({ opacity: 1, transform: 'translateY({{percent_start_1}}%)', offset: 0.5 }),
             style({ transform: 'translateY({{percent_start_2}}%)', offset: 0.8 }),
@@ -159,35 +159,10 @@ const FadeSlideInOut = trigger('fadeSlideInOut', [
         ]))
     ])
 ]);
-const FadeSlideInOutKonversoOpacityOut = trigger('FadeSlideInOutKonversoOpacityOut', [
-    transition(':enter', [
-        style({ opacity: 0, transform: 'translateY({{percent_start}}%)' }),
-        animate(`{{ttx}}ms ${ANIMATION_TYPE_CUBIC_BEZIER$1}`, keyframes([
-            style({ opacity: 0.5, transform: 'translateY({{percent_start}}%)', offset: 0.2 }),
-            style({ opacity: 1, transform: 'translateY({{percent_start_1}}%)', offset: 0.5 }),
-            style({ transform: 'translateY({{percent_start_2}}%)', offset: 0.8 }),
-            style({ transform: 'translateY(0%)', offset: 1 })
-        ]))
-    ]),
-    transition(':leave', [
-        style({ opacity: 1 }),
-        animate(`{{ttx}}ms ${ANIMATION_TYPE_CUBIC_BEZIER$1}`, style({ opacity: 0 }))
-    ])
-]);
-const FadeSlideInOutKonversoTranslateOut = trigger('FadeSlideInOutKonversoTranslateOut', [
-    transition(':enter', [
-        style({ opacity: 0, top: '{{percent_start}}%' }),
-        animate(`{{ttx}}ms ${ANIMATION_TYPE_CUBIC_BEZIER$1}`, style({ opacity: 1, top: '0%' }))
-    ]),
-    transition(':leave', [
-        style({ opacity: 1 }),
-        animate('100ms ease-in-out', style({ opacity: 0 }))
-    ])
-]);
 const FadeSlideInOutCasesFeedHome = trigger('FadeSlideInOutCasesFeedHome', [
     transition(':enter', [
         style({ opacity: 0, transform: 'translateY({{percent_start}}%)' }),
-        animate(`{{ttx}}ms ${ANIMATION_TYPE_CUBIC_BEZIER$1}`, keyframes([
+        animate(`{{ttx}}ms ${ANIMATION_TYPE_CUBIC_BEZIER$2}`, keyframes([
             style({ opacity: 0.5, transform: 'translateY({{percent_start}}%)', offset: 0.2 }),
             style({ opacity: 1, transform: 'translateY({{percent_start_1}}%)', offset: 0.5 }),
             style({ transform: 'translateY({{percent_start_2}}%)', offset: 0.75 }),
@@ -203,7 +178,7 @@ const FadeSlideInOutCasesFeedHome = trigger('FadeSlideInOutCasesFeedHome', [
 const FadeSlideInOutStagger = trigger('fadeSlideInOutStagger', [
     transition(':enter', [
         style({ opacity: 0, transform: 'translateY({{percent_start}}%)' }),
-        animate(`{{ttx}}ms ${ANIMATION_TYPE_CUBIC_BEZIER$1}`, keyframes([
+        animate(`{{ttx}}ms ${ANIMATION_TYPE_CUBIC_BEZIER$2}`, keyframes([
             style({ opacity: 0.2, transform: 'translateY({{percent_start}}%)', offset: 0.2 }),
             style({ opacity: 0.5, transform: 'translateY({{percent_start_1}}%)', offset: 0.5 }),
             style({ opacity: 1, transform: 'translateY({{percent_start_2}}%)', offset: 0.8 }),
@@ -228,7 +203,7 @@ const FadeSlideInOutStagger = trigger('fadeSlideInOutStagger', [
  **  @Date 05/08/2022
  **  @Description
  ***********************************************************/
-const ANIMATION_TYPE_CUBIC_BEZIER = 'cubic-bezier(0.20, 0.4, 0, 1)';
+const ANIMATION_TYPE_CUBIC_BEZIER$1 = 'cubic-bezier(0.20, 0.4, 0, 1)';
 const ANIMAION_DURATION = 750;
 const TRANSLATE_X = 105;
 const SlideRightAndLeft = [
@@ -236,19 +211,19 @@ const SlideRightAndLeft = [
         transition(':increment', group([
             query(':enter', [
                 style({ transform: `translateX(${TRANSLATE_X}%)` }),
-                animate(`${ANIMAION_DURATION}ms ${ANIMATION_TYPE_CUBIC_BEZIER}`, style({ transform: 'translateX(0%)' }))
+                animate(`${ANIMAION_DURATION}ms ${ANIMATION_TYPE_CUBIC_BEZIER$1}`, style({ transform: 'translateX(0%)' }))
             ]),
             query(':leave', [
-                animate(`${ANIMAION_DURATION}ms ${ANIMATION_TYPE_CUBIC_BEZIER}`, style({ transform: `translateX(-${TRANSLATE_X}%)` }))
+                animate(`${ANIMAION_DURATION}ms ${ANIMATION_TYPE_CUBIC_BEZIER$1}`, style({ transform: `translateX(-${TRANSLATE_X}%)` }))
             ], { optional: true })
         ])),
         transition(':decrement', group([
             query(':enter', [
                 style({ transform: `translateX(-${TRANSLATE_X}%)`, opacity: 1 }),
-                animate(`${ANIMAION_DURATION}ms ${ANIMATION_TYPE_CUBIC_BEZIER}`, style({ transform: 'translateX(0%)' }))
+                animate(`${ANIMAION_DURATION}ms ${ANIMATION_TYPE_CUBIC_BEZIER$1}`, style({ transform: 'translateX(0%)' }))
             ]),
             query(':leave', [
-                animate(`${ANIMAION_DURATION}ms ${ANIMATION_TYPE_CUBIC_BEZIER}`, style({ transform: `translateX(${TRANSLATE_X}%)` }))
+                animate(`${ANIMAION_DURATION}ms ${ANIMATION_TYPE_CUBIC_BEZIER$1}`, style({ transform: `translateX(${TRANSLATE_X}%)` }))
             ], { optional: true })
         ])),
     ])
@@ -306,6 +281,46 @@ const FlipX = [
  **  @project
  **  @file
  **  @author Brice Daupiard <brice.daupiard@nowbrains.com>
+ **  @Date 09/08/2022
+ **  @Description
+ ***********************************************************/
+const ANIMATION_TYPE_CUBIC_BEZIER = 'cubic-bezier(0.39, 0.58, 0.57, 1)';
+const FadeSlideInOutKonversoOpacityOut = trigger('FadeSlideInOutKonversoOpacityOut', [
+    transition(':enter', [
+        style({ opacity: 0, transform: 'translateY({{percent_start}}%)' }),
+        animate(`{{ttx}}ms ${ANIMATION_TYPE_CUBIC_BEZIER}`, keyframes([
+            style({ opacity: 0.5, transform: 'translateY({{percent_start}}%)', offset: 0.2 }),
+            style({ opacity: 1, transform: 'translateY({{percent_start_1}}%)', offset: 0.5 }),
+            style({ transform: 'translateY({{percent_start_2}}%)', offset: 0.8 }),
+            style({ transform: 'translateY(0%)', offset: 1 })
+        ]))
+    ]),
+    transition(':leave', [
+        style({ opacity: 1 }),
+        animate(`{{ttx}}ms ${ANIMATION_TYPE_CUBIC_BEZIER}`, style({ opacity: 0 }))
+    ])
+]);
+const FadeSlideInOutKonversoTranslateOut = trigger('FadeSlideInOutKonversoTranslateOut', [
+    transition(':enter', [
+        style({ opacity: 0, top: '{{percent_start}}%' }),
+        animate(`{{ttx}}ms ${ANIMATION_TYPE_CUBIC_BEZIER}`, style({ opacity: 1, top: '0%' }))
+    ]),
+    transition(':leave', [
+        style({ opacity: 1 }),
+        animate('100ms ease-in-out', style({ opacity: 0 }))
+    ])
+]);
+const FadeSlideInOutKonversoHeight = trigger('FadeSlideInOutKonversoHeight', [
+    transition(':enter', [
+        style({ height: 0 }),
+        animate(`{{ttx}}ms ${ANIMATION_TYPE_CUBIC_BEZIER}`, style({ height: '*' }))
+    ])
+]);
+
+/***********************************************************
+ **  @project
+ **  @file
+ **  @author Brice Daupiard <brice.daupiard@nowbrains.com>
  **  @Date 11/08/2022
  **  @Description
  ***********************************************************/
@@ -318,5 +333,5 @@ const FlipX = [
  * Generated bundle index. Do not edit.
  */
 
-export { AnimationsService, FadeInOut, FadeSlideInOut, FadeSlideInOutCasesFeedHome, FadeSlideInOutKonversoOpacityOut, FadeSlideInOutKonversoTranslateOut, FadeSlideInOutStagger, FlipX, SlideRightAndLeft, slideInOut };
+export { AnimationsService, FadeInOut, FadeSlideInOut, FadeSlideInOutCasesFeedHome, FadeSlideInOutKonversoHeight, FadeSlideInOutKonversoOpacityOut, FadeSlideInOutKonversoTranslateOut, FadeSlideInOutStagger, FlipX, SlideRightAndLeft, slideInOut };
 //# sourceMappingURL=ngx-nowbrains-animations.js.map

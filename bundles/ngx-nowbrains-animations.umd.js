@@ -169,11 +169,11 @@
      **  @Date 09/08/2022
      **  @Description
      ***********************************************************/
-    var ANIMATION_TYPE_CUBIC_BEZIER$1 = 'cubic-bezier(0.39, 0.58, 0.57, 1)';
+    var ANIMATION_TYPE_CUBIC_BEZIER$2 = 'cubic-bezier(0.39, 0.58, 0.57, 1)';
     var FadeSlideInOut = animations.trigger('fadeSlideInOut', [
         animations.transition(':enter', [
             animations.style({ opacity: 0, transform: 'translateY({{percent_start}}%)' }),
-            animations.animate("{{ttx}}ms " + ANIMATION_TYPE_CUBIC_BEZIER$1, animations.keyframes([
+            animations.animate("{{ttx}}ms " + ANIMATION_TYPE_CUBIC_BEZIER$2, animations.keyframes([
                 animations.style({ opacity: 0.5, transform: 'translateY({{percent_start}}%)', offset: 0.2 }),
                 animations.style({ opacity: 1, transform: 'translateY({{percent_start_1}}%)', offset: 0.5 }),
                 animations.style({ transform: 'translateY({{percent_start_2}}%)', offset: 0.8 }),
@@ -190,35 +190,10 @@
             ]))
         ])
     ]);
-    var FadeSlideInOutKonversoOpacityOut = animations.trigger('FadeSlideInOutKonversoOpacityOut', [
-        animations.transition(':enter', [
-            animations.style({ opacity: 0, transform: 'translateY({{percent_start}}%)' }),
-            animations.animate("{{ttx}}ms " + ANIMATION_TYPE_CUBIC_BEZIER$1, animations.keyframes([
-                animations.style({ opacity: 0.5, transform: 'translateY({{percent_start}}%)', offset: 0.2 }),
-                animations.style({ opacity: 1, transform: 'translateY({{percent_start_1}}%)', offset: 0.5 }),
-                animations.style({ transform: 'translateY({{percent_start_2}}%)', offset: 0.8 }),
-                animations.style({ transform: 'translateY(0%)', offset: 1 })
-            ]))
-        ]),
-        animations.transition(':leave', [
-            animations.style({ opacity: 1 }),
-            animations.animate("{{ttx}}ms " + ANIMATION_TYPE_CUBIC_BEZIER$1, animations.style({ opacity: 0 }))
-        ])
-    ]);
-    var FadeSlideInOutKonversoTranslateOut = animations.trigger('FadeSlideInOutKonversoTranslateOut', [
-        animations.transition(':enter', [
-            animations.style({ opacity: 0, top: '{{percent_start}}%' }),
-            animations.animate("{{ttx}}ms " + ANIMATION_TYPE_CUBIC_BEZIER$1, animations.style({ opacity: 1, top: '0%' }))
-        ]),
-        animations.transition(':leave', [
-            animations.style({ opacity: 1 }),
-            animations.animate('100ms ease-in-out', animations.style({ opacity: 0 }))
-        ])
-    ]);
     var FadeSlideInOutCasesFeedHome = animations.trigger('FadeSlideInOutCasesFeedHome', [
         animations.transition(':enter', [
             animations.style({ opacity: 0, transform: 'translateY({{percent_start}}%)' }),
-            animations.animate("{{ttx}}ms " + ANIMATION_TYPE_CUBIC_BEZIER$1, animations.keyframes([
+            animations.animate("{{ttx}}ms " + ANIMATION_TYPE_CUBIC_BEZIER$2, animations.keyframes([
                 animations.style({ opacity: 0.5, transform: 'translateY({{percent_start}}%)', offset: 0.2 }),
                 animations.style({ opacity: 1, transform: 'translateY({{percent_start_1}}%)', offset: 0.5 }),
                 animations.style({ transform: 'translateY({{percent_start_2}}%)', offset: 0.75 }),
@@ -234,7 +209,7 @@
     var FadeSlideInOutStagger = animations.trigger('fadeSlideInOutStagger', [
         animations.transition(':enter', [
             animations.style({ opacity: 0, transform: 'translateY({{percent_start}}%)' }),
-            animations.animate("{{ttx}}ms " + ANIMATION_TYPE_CUBIC_BEZIER$1, animations.keyframes([
+            animations.animate("{{ttx}}ms " + ANIMATION_TYPE_CUBIC_BEZIER$2, animations.keyframes([
                 animations.style({ opacity: 0.2, transform: 'translateY({{percent_start}}%)', offset: 0.2 }),
                 animations.style({ opacity: 0.5, transform: 'translateY({{percent_start_1}}%)', offset: 0.5 }),
                 animations.style({ opacity: 1, transform: 'translateY({{percent_start_2}}%)', offset: 0.8 }),
@@ -259,7 +234,7 @@
      **  @Date 05/08/2022
      **  @Description
      ***********************************************************/
-    var ANIMATION_TYPE_CUBIC_BEZIER = 'cubic-bezier(0.20, 0.4, 0, 1)';
+    var ANIMATION_TYPE_CUBIC_BEZIER$1 = 'cubic-bezier(0.20, 0.4, 0, 1)';
     var ANIMAION_DURATION = 750;
     var TRANSLATE_X = 105;
     var SlideRightAndLeft = [
@@ -267,19 +242,19 @@
             animations.transition(':increment', animations.group([
                 animations.query(':enter', [
                     animations.style({ transform: "translateX(" + TRANSLATE_X + "%)" }),
-                    animations.animate(ANIMAION_DURATION + "ms " + ANIMATION_TYPE_CUBIC_BEZIER, animations.style({ transform: 'translateX(0%)' }))
+                    animations.animate(ANIMAION_DURATION + "ms " + ANIMATION_TYPE_CUBIC_BEZIER$1, animations.style({ transform: 'translateX(0%)' }))
                 ]),
                 animations.query(':leave', [
-                    animations.animate(ANIMAION_DURATION + "ms " + ANIMATION_TYPE_CUBIC_BEZIER, animations.style({ transform: "translateX(-" + TRANSLATE_X + "%)" }))
+                    animations.animate(ANIMAION_DURATION + "ms " + ANIMATION_TYPE_CUBIC_BEZIER$1, animations.style({ transform: "translateX(-" + TRANSLATE_X + "%)" }))
                 ], { optional: true })
             ])),
             animations.transition(':decrement', animations.group([
                 animations.query(':enter', [
                     animations.style({ transform: "translateX(-" + TRANSLATE_X + "%)", opacity: 1 }),
-                    animations.animate(ANIMAION_DURATION + "ms " + ANIMATION_TYPE_CUBIC_BEZIER, animations.style({ transform: 'translateX(0%)' }))
+                    animations.animate(ANIMAION_DURATION + "ms " + ANIMATION_TYPE_CUBIC_BEZIER$1, animations.style({ transform: 'translateX(0%)' }))
                 ]),
                 animations.query(':leave', [
-                    animations.animate(ANIMAION_DURATION + "ms " + ANIMATION_TYPE_CUBIC_BEZIER, animations.style({ transform: "translateX(" + TRANSLATE_X + "%)" }))
+                    animations.animate(ANIMAION_DURATION + "ms " + ANIMATION_TYPE_CUBIC_BEZIER$1, animations.style({ transform: "translateX(" + TRANSLATE_X + "%)" }))
                 ], { optional: true })
             ])),
         ])
@@ -337,6 +312,46 @@
      **  @project
      **  @file
      **  @author Brice Daupiard <brice.daupiard@nowbrains.com>
+     **  @Date 09/08/2022
+     **  @Description
+     ***********************************************************/
+    var ANIMATION_TYPE_CUBIC_BEZIER = 'cubic-bezier(0.39, 0.58, 0.57, 1)';
+    var FadeSlideInOutKonversoOpacityOut = animations.trigger('FadeSlideInOutKonversoOpacityOut', [
+        animations.transition(':enter', [
+            animations.style({ opacity: 0, transform: 'translateY({{percent_start}}%)' }),
+            animations.animate("{{ttx}}ms " + ANIMATION_TYPE_CUBIC_BEZIER, animations.keyframes([
+                animations.style({ opacity: 0.5, transform: 'translateY({{percent_start}}%)', offset: 0.2 }),
+                animations.style({ opacity: 1, transform: 'translateY({{percent_start_1}}%)', offset: 0.5 }),
+                animations.style({ transform: 'translateY({{percent_start_2}}%)', offset: 0.8 }),
+                animations.style({ transform: 'translateY(0%)', offset: 1 })
+            ]))
+        ]),
+        animations.transition(':leave', [
+            animations.style({ opacity: 1 }),
+            animations.animate("{{ttx}}ms " + ANIMATION_TYPE_CUBIC_BEZIER, animations.style({ opacity: 0 }))
+        ])
+    ]);
+    var FadeSlideInOutKonversoTranslateOut = animations.trigger('FadeSlideInOutKonversoTranslateOut', [
+        animations.transition(':enter', [
+            animations.style({ opacity: 0, top: '{{percent_start}}%' }),
+            animations.animate("{{ttx}}ms " + ANIMATION_TYPE_CUBIC_BEZIER, animations.style({ opacity: 1, top: '0%' }))
+        ]),
+        animations.transition(':leave', [
+            animations.style({ opacity: 1 }),
+            animations.animate('100ms ease-in-out', animations.style({ opacity: 0 }))
+        ])
+    ]);
+    var FadeSlideInOutKonversoHeight = animations.trigger('FadeSlideInOutKonversoHeight', [
+        animations.transition(':enter', [
+            animations.style({ height: 0 }),
+            animations.animate("{{ttx}}ms " + ANIMATION_TYPE_CUBIC_BEZIER, animations.style({ height: '*' }))
+        ])
+    ]);
+
+    /***********************************************************
+     **  @project
+     **  @file
+     **  @author Brice Daupiard <brice.daupiard@nowbrains.com>
      **  @Date 11/08/2022
      **  @Description
      ***********************************************************/
@@ -353,6 +368,7 @@
     exports.FadeInOut = FadeInOut;
     exports.FadeSlideInOut = FadeSlideInOut;
     exports.FadeSlideInOutCasesFeedHome = FadeSlideInOutCasesFeedHome;
+    exports.FadeSlideInOutKonversoHeight = FadeSlideInOutKonversoHeight;
     exports.FadeSlideInOutKonversoOpacityOut = FadeSlideInOutKonversoOpacityOut;
     exports.FadeSlideInOutKonversoTranslateOut = FadeSlideInOutKonversoTranslateOut;
     exports.FadeSlideInOutStagger = FadeSlideInOutStagger;
